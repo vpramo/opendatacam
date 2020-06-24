@@ -21,7 +21,7 @@ class DBManager {
         if (err) {
           reject(err)
         } else {
-          let db = client.db(mongCollect)
+          let db = client.db(mongoCollect)
           this.db = db
 
           // Get the collection
