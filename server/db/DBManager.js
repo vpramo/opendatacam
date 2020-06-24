@@ -3,6 +3,7 @@ var ObjectID = require('mongodb').ObjectID
 const config = require('../../config.json');
 
 var mongoURL = config.MONGODB_URL;
+var mongoCollect = config.MONGOCOLLECTION;
 
 var RECORDING_COLLECTION = 'recordings';
 var TRACKER_COLLECTION = 'tracker';
@@ -20,7 +21,7 @@ class DBManager {
         if (err) {
           reject(err)
         } else {
-          let db = client.db('opendatacam')
+          let db = client.db(mongCollect)
           this.db = db
 
           // Get the collection
