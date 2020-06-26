@@ -27,7 +27,9 @@ RUN mkdir opendatacam_videos && cd opendatacam_videos && wget https://github.com
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt-get install -y nodejs
 
-RUN git clone --depth 1 -b inq_object https://github.com/vpramo/opendatacam /var/local/opendatacam
+ARG DUMMY=unknown
+
+RUN DUMMY=${DUMMY} git clone --depth 1 -b inq_object https://github.com/vpramo/opendatacam /var/local/opendatacam
 
 WORKDIR /var/local/opendatacam
 

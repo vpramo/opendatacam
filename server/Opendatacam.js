@@ -593,7 +593,7 @@ module.exports = {
     }
 
     var options = {
-      hostname: urlData.address,
+      hostname: '127.0.0.1',
       port:     configHelper.getJsonStreamPort(),
       path:     '/',
       method:   'GET'

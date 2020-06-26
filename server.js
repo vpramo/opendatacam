@@ -154,7 +154,7 @@ app.prepare()
   express.get('/webcam/stream', (req, res) => {
     const urlData = getURLData(req);
     // Proxy MJPEG stream from darknet to avoid freezing issues
-    return new MjpegProxy(`http://${urlData.address}:${config.PORTS.darknet_mjpeg_stream}`).proxyRequest(req, res);
+    return new MjpegProxy(`http://127.0.0.1:${config.PORTS.darknet_mjpeg_stream}`).proxyRequest(req, res);
   });
 
   /**
