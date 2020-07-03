@@ -711,6 +711,8 @@ module.exports = {
         console.log('Something went wrong: ' + e.message);
         console.log('Too much retries, YOLO took more than 3 min to start, likely an error')
         console.log(Opendatacam.HTTPRequestListeningToYOLOMaxRetries)
+        YOLO.restart();
+
       }
     });
 
